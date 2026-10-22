@@ -4,154 +4,109 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>A Little Apology 💗</title>
+<title>For Yatri 💗</title>
 
 <style>
-@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&family=Pacifico&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;700;800&family=Pacifico&display=swap');
 
-* {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-}
+* { box-sizing: border-box; }
 
 body {
+    margin: 0;
     min-height: 100vh;
-    font-family: 'Nunito', sans-serif;
-    background: linear-gradient(135deg, #ffe0ec, #fff0f5, #fce4ff);
     display: flex;
     justify-content: center;
     align-items: center;
+    font-family: 'Nunito', sans-serif;
+    color: #864763;
+    background: linear-gradient(135deg, #ffd6e7, #fff0f5, #f5dcff);
     overflow-x: hidden;
-    color: #75415b;
 }
 
 .heart {
     position: fixed;
     bottom: -40px;
-    font-size: 22px;
     pointer-events: none;
-    animation: floatUp linear forwards;
+    animation: floatUp 5s linear forwards;
     z-index: 0;
 }
 
 @keyframes floatUp {
-    to {
-        transform: translateY(-115vh) rotate(360deg);
-        opacity: 0;
-    }
+    to { transform: translateY(-110vh) rotate(360deg); opacity: 0; }
 }
 
 .container {
-    width: min(90%, 540px);
-    padding: 35px 25px;
+    width: 90%;
+    max-width: 530px;
+    padding: 30px 22px;
+    margin: 25px 0;
     text-align: center;
-    background: rgba(255,255,255,0.76);
-    border: 2px solid white;
+    background: rgba(255,255,255,.85);
+    border: 3px solid white;
     border-radius: 30px;
-    box-shadow: 0 15px 50px rgba(203, 107, 151, 0.18);
+    box-shadow: 0 12px 40px #d77fa533;
     position: relative;
     z-index: 1;
-    margin: 25px 0;
 }
 
-.page {
-    display: none;
-    animation: appear 0.65s ease;
-}
-
-.page.active {
-    display: block;
-}
+.page { display: none; animation: appear .5s ease; }
+.page.active { display: block; }
 
 @keyframes appear {
-    from {
-        opacity: 0;
-        transform: translateY(15px) scale(.98);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0) scale(1);
-    }
+    from { opacity: 0; transform: translateY(12px); }
+    to { opacity: 1; transform: translateY(0); }
 }
 
 .emoji {
-    font-size: 65px;
-    margin-bottom: 15px;
-    animation: bounce 2s infinite ease-in-out;
+    font-size: 60px;
+    margin: 8px 0 18px;
+    animation: bounce 2s infinite;
 }
 
 @keyframes bounce {
-    50% { transform: translateY(-8px) rotate(3deg); }
+    50% { transform: translateY(-7px); }
 }
 
 h1 {
     font-family: 'Pacifico', cursive;
-    font-size: clamp(28px, 7vw, 39px);
-    color: #e36b9b;
-    margin-bottom: 18px;
+    color: #e5669b;
     font-weight: normal;
+    font-size: clamp(27px, 7vw, 38px);
+    margin: 12px 0 20px;
 }
 
-p {
-    font-size: 16px;
-    line-height: 1.9;
-    margin: 12px 0;
-}
+p { line-height: 1.9; font-size: 16px; }
 
-.highlight {
-    color: #df6095;
-    font-weight: 800;
-}
-
-.divider {
-    color: #f09abb;
-    letter-spacing: 8px;
-    margin: 18px 0;
-}
+.pink { color: #dc6195; font-weight: 800; }
 
 button {
-    font-family: 'Nunito', sans-serif;
-    border: none;
-    cursor: pointer;
-    padding: 13px 24px;
+    border: 0;
     border-radius: 30px;
-    font-size: 15px;
+    padding: 13px 21px;
+    margin: 8px 4px;
+    font-family: 'Nunito', sans-serif;
     font-weight: 800;
-    margin: 8px 5px;
+    font-size: 15px;
+    cursor: pointer;
     transition: transform .2s, box-shadow .2s;
 }
 
 button:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 7px 15px #e9a0c277;
+    box-shadow: 0 5px 15px #db8db355;
 }
 
-.next {
+.next, .yes {
     color: white;
-    background: linear-gradient(135deg, #f18bb5, #df6095);
-    margin-top: 22px;
+    background: linear-gradient(135deg, #f49ac0, #e45d98);
 }
 
-.back {
-    background: #fff0f6;
-    color: #d15c8e;
-    border: 1px solid #f5cade;
+.back, .no {
+    color: #c15b87;
+    background: #ffe6f0;
+    border: 1px solid #f4c0d5;
 }
 
-.yes {
-    color: white;
-    background: linear-gradient(135deg, #f48bb5, #e35c98);
-    font-size: 17px;
-}
-
-.no {
-    color: #b45b7e;
-    background: #ffe8f0;
-    border: 1px solid #f5c3d7;
-}
-
-.progress {
+.dots {
     display: flex;
     justify-content: center;
     gap: 8px;
@@ -162,40 +117,50 @@ button:hover {
     width: 9px;
     height: 9px;
     border-radius: 50%;
-    background: #f4c4d7;
+    background: #f3c4d8;
 }
 
-.dot.current {
-    background: #e46b9d;
-    transform: scale(1.35);
-}
+.dot.current { background: #e5669b; transform: scale(1.3); }
 
 .promise {
     text-align: left;
-    background: #fff4f8;
-    border-radius: 18px;
-    padding: 13px 15px;
+    background: #fff2f7;
+    padding: 12px;
     margin: 10px 0;
-    border: 1px solid #ffe0ec;
+    border-radius: 15px;
+    line-height: 1.7;
 }
 
-.promise span {
-    margin-right: 7px;
+#buttonArea {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 12px;
+    flex-wrap: wrap;
+    min-height: 110px;
+    margin: 15px 0;
+}
+
+#noBtn {
+    position: relative;
+    z-index: 2;
+    touch-action: manipulation;
 }
 
 #answer {
-    margin-top: 22px;
-    padding: 17px;
-    border-radius: 18px;
-    background: #fff0f6;
     display: none;
+    padding: 16px;
+    background: #fff0f6;
+    border-radius: 20px;
+    margin-top: 18px;
     animation: appear .5s ease;
 }
 
 .footer {
-    margin-top: 25px;
-    font-size: 12px;
     color: #c18ba3;
+    font-size: 12px;
+    margin-top: 20px;
 }
 </style>
 </head>
@@ -204,149 +169,122 @@ button:hover {
 
 <div class="container">
 
-    <div class="progress">
-        <div class="dot current"></div>
-        <div class="dot"></div>
-        <div class="dot"></div>
-        <div class="dot"></div>
-    </div>
+<div class="dots">
+    <span class="dot current"></span>
+    <span class="dot"></span>
+    <span class="dot"></span>
+    <span class="dot"></span>
+</div>
 
-    <!-- PAGE 1 -->
-    <section class="page active" id="page1">
-        <div class="emoji">🥺💗</div>
-        <h1>Hey, You...</h1>
+<!-- PAGE 1 -->
+<section class="page active" id="page1">
+    <div class="emoji">🧸💗</div>
+    <h1>Hey, Yatri!</h1>
 
-        <p>
-            I made this little corner of the internet
-            just for you. 🌷
-        </p>
+    <p>
+        Hiiiii Yatriii 🥹💕
+    </p>
 
-        <p>
-            There's something I've been wanting to say,
-            and I hope you'll give me a little moment
-            to say it.
-        </p>
+    <p>
+        I made this little website just for you.
+        There's something important I want to tell you,
+        so please read till the end. 🌷
+    </p>
 
-        <div class="divider">♡ ♡ ♡</div>
+    <p class="pink">It's made with lots of feelings and a little hope. 🎀</p>
 
-        <p class="highlight">
-            Ready to hear me out? 🧸
-        </p>
+    <button class="next" onclick="goTo(2)">
+        Open your little letter 💌 →
+    </button>
+</section>
 
-        <button class="next" onclick="goTo(2)">
-            Open my little letter 💌 →
+<!-- PAGE 2 -->
+<section class="page" id="page2">
+    <div class="emoji">🥺💌</div>
+    <h1>I'm Sorry, Yatri</h1>
+
+    <p>
+        Yatri, I'm genuinely sorry if I hurt you
+        or made you feel bad. 💗
+    </p>
+
+    <p>
+        I know that sometimes words and actions can hurt,
+        even when that wasn't what we intended.
+        I wish I could take back the moments that upset you.
+    </p>
+
+    <p>
+        You deserve to have your feelings heard
+        and understood. I don't want to ignore what
+        happened or pretend a simple sorry fixes everything.
+    </p>
+
+    <p class="pink">
+        I really do mean it, Yatri. 🥹🌸
+    </p>
+
+    <button class="back" onclick="goTo(1)">← Back</button>
+    <button class="next" onclick="goTo(3)">Read more 💗 →</button>
+</section>
+
+<!-- PAGE 3 -->
+<section class="page" id="page3">
+    <div class="emoji">🌷🫶</div>
+    <h1>A Promise for You</h1>
+
+    <p>
+        Yatri, I can't promise I'll always be perfect,
+        but I can promise to keep learning. 💕
+    </p>
+
+    <div class="promise">🌸 I'll try to listen and understand your feelings.</div>
+    <div class="promise">💗 I'll take responsibility when I'm wrong.</div>
+    <div class="promise">🧸 I'll try to show through my actions that I mean what I say.</div>
+    <div class="promise">🦋 I'll respect your feelings and give you time if you need it.</div>
+
+    <p>
+        You matter, Yatri. And I'm really hoping
+        we can make things better. 💞
+    </p>
+
+    <button class="back" onclick="goTo(2)">← Back</button>
+    <button class="next" onclick="goTo(4)">One last question 🥹 →</button>
+</section>
+
+<!-- PAGE 4 -->
+<section class="page" id="page4">
+    <div class="emoji">🥹💖</div>
+    <h1>Yatri, Will You Forgive Me?</h1>
+
+    <p>
+        I made this just to say something simple
+        but important...
+    </p>
+
+    <p class="pink">
+        I'm sorry, Yatri. 💌
+        I hope I can make things better.
+    </p>
+
+    <p>So, tell me... will you forgive me? 🥺</p>
+
+    <div id="buttonArea">
+        <button class="yes" onclick="chooseYes()">
+            YES 💖
         </button>
-    </section>
 
-    <!-- PAGE 2 -->
-    <section class="page" id="page2">
-        <div class="emoji">💌🌸</div>
-        <h1>I'm Really Sorry</h1>
-
-        <p>
-            I know that I may have hurt your feelings,
-            and honestly, I'm sorry for that.
-        </p>
-
-        <p>
-            I never wanted to make you feel upset,
-            unimportant, or unheard. Your feelings matter,
-            and I should have been more thoughtful.
-        </p>
-
-        <p>
-            I can't change what happened, but I can
-            acknowledge it, learn from it, and try to
-            do better.
-        </p>
-
-        <div class="divider">୨୧ ♡ ୨୧</div>
-
-        <p class="highlight">
-            You deserve a genuine apology, not just
-            a bunch of pretty words. 🥹
-        </p>
-
-        <button class="back" onclick="goTo(1)">← Back</button>
-        <button class="next" onclick="goTo(3)">One more thing... 💗 →</button>
-    </section>
-
-    <!-- PAGE 3 -->
-    <section class="page" id="page3">
-        <div class="emoji">🧸🎀</div>
-        <h1>A Little Promise</h1>
-
-        <p>
-            I can't promise to be perfect,
-            but I can promise to keep trying. 💕
-        </p>
-
-        <div class="promise">
-            <span>🌷</span>
-            To listen to you instead of dismissing
-            how you feel.
-        </div>
-
-        <div class="promise">
-            <span>💗</span>
-            To take responsibility when I'm wrong.
-        </div>
-
-        <div class="promise">
-            <span>🫶</span>
-            To show through my actions that
-            I'm making an effort.
-        </div>
-
-        <div class="promise">
-            <span>🦋</span>
-            To respect your feelings and give you
-            the time you need.
-        </div>
-
-        <p>
-            You don't have to forgive me immediately.
-            I just hope I can make things right,
-            one little step at a time. 🌸
-        </p>
-
-        <button class="back" onclick="goTo(2)">← Back</button>
-        <button class="next" onclick="goTo(4)">One last question 💖 →</button>
-    </section>
-
-    <!-- PAGE 4 -->
-    <section class="page" id="page4">
-        <div class="emoji">🥹💞</div>
-        <h1>Will You Forgive Me?</h1>
-
-        <p>
-            I know a website can't fix everything,
-            but every word here comes with a sincere
-            wish to make things better. 💌
-        </p>
-
-        <p class="highlight">
-            So, what do you say? 🌷
-        </p>
-
-        <div style="margin-top: 25px;">
-            <button class="yes" onclick="choose('yes')">
-                Yes, I forgive you 💖
-            </button>
-
-            <button class="no" onclick="choose('no')">
-                Not yet 💔
-            </button>
-        </div>
-
-        <div id="answer"></div>
-
-        <button class="back" onclick="goTo(3)">← Read again</button>
-    </section>
-
-    <div class="footer">
-        made with a little hope & lots of pink ♡
+        <button class="no" id="noBtn">
+            NO 💔
+        </button>
     </div>
+
+    <div id="answer"></div>
+
+    <button class="back" onclick="goTo(3)">← Read again</button>
+</section>
+
+<div class="footer">made especially for Yatri ♡ with love & hope 🎀</div>
 </div>
 
 <script>
@@ -361,58 +299,73 @@ function goTo(number) {
     document.getElementById('page' + currentPage)
         .classList.add('active');
 
-    document.querySelectorAll('.dot').forEach((dot, index) => {
-        dot.classList.toggle('current', index === number - 1);
+    document.querySelectorAll('.dot').forEach((dot, i) => {
+        dot.classList.toggle('current', i === number - 1);
     });
 
     document.getElementById('answer').style.display = 'none';
 
+    // Reset No button when returning to the last page
+    if (number === 4) resetNoButton();
+
     window.scrollTo({ top: 0, behavior: 'smooth' });
 }
 
-function choose(choice) {
-    const answer = document.getElementById('answer');
-    answer.style.display = 'block';
+const noBtn = document.getElementById('noBtn');
+const buttonArea = document.getElementById('buttonArea');
 
-    if (choice === 'yes') {
-        answer.innerHTML = `
-            <div style="font-size:45px">🥹💖🌷</div>
-            <h2 style="color:#df6095; margin:10px 0">
-                Thank you, truly!
-            </h2>
-            <p>
-                That means so much. I'll do my best
-                to show you that your forgiveness
-                matters to me. Sending you the
-                biggest virtual hug! 🫂💕
-            </p>
-            <p>♡ You are appreciated ♡</p>
-        `;
+function moveNoButton() {
+    // Make the NO button move around the screen!
+    noBtn.style.position = 'fixed';
 
-        burstHearts();
-    } else {
-        answer.innerHTML = `
-            <div style="font-size:45px">🫶🌸</div>
-            <h2 style="color:#df6095; margin:10px 0">
-                That's okay. 💗
-            </h2>
-            <p>
-                I understand. You don't have to
-                forgive me before you're ready.
-                I'll respect your feelings and give
-                you the time and space you need.
-            </p>
-            <p>
-                I'm still genuinely sorry, and I hope
-                my actions can make things better. 🌷
-            </p>
-        `;
-    }
+    const padding = 20;
+    const maxX = Math.max(padding, window.innerWidth - noBtn.offsetWidth - padding);
+    const maxY = Math.max(padding, window.innerHeight - noBtn.offsetHeight - padding);
+
+    const x = padding + Math.random() * (maxX - padding);
+    const y = padding + Math.random() * (maxY - padding);
+
+    noBtn.style.left = x + 'px';
+    noBtn.style.top = y + 'px';
+    noBtn.style.transition = 'left .18s ease, top .18s ease';
 }
 
-function burstHearts() {
-    for (let i = 0; i < 24; i++) {
-        setTimeout(createHeart, i * 70);
+noBtn.addEventListener('mouseenter', moveNoButton);
+noBtn.addEventListener('click', (event) => {
+    event.preventDefault();
+    moveNoButton();
+});
+noBtn.addEventListener('touchstart', (event) => {
+    event.preventDefault();
+    moveNoButton();
+}, { passive: false });
+
+function resetNoButton() {
+    noBtn.style.position = 'relative';
+    noBtn.style.left = 'auto';
+    noBtn.style.top = 'auto';
+}
+
+function chooseYes() {
+    const answer = document.getElementById('answer');
+
+    answer.innerHTML = `
+        <div style="font-size:48px">🥹💗🫂</div>
+        <h2 style="color:#e5669b">YAYYYY, YATRI! 🎀</h2>
+        <p>
+            Thank you for hearing me out. 💖
+            Your feelings mean a lot, and I'll do my best
+            to make things better through my actions.
+        </p>
+        <p>Sending you a big virtual hug! 🌷💕</p>
+        <p style="font-size:25px">💗 💞 💗 💞 💗</p>
+    `;
+
+    answer.style.display = 'block';
+    noBtn.style.display = 'none';
+
+    for (let i = 0; i < 35; i++) {
+        setTimeout(createHeart, i * 90);
     }
 }
 
@@ -421,22 +374,19 @@ function createHeart() {
     heart.className = 'heart';
 
     const emojis = ['💗', '💕', '💖', '🌸', '💞', '🩷'];
-    heart.textContent = emojis[
-        Math.floor(Math.random() * emojis.length)
-    ];
+    heart.textContent = emojis[Math.floor(Math.random() * emojis.length)];
 
     heart.style.left = Math.random() * 100 + 'vw';
+    heart.style.fontSize = (18 + Math.random() * 20) + 'px';
     heart.style.animationDuration = (3 + Math.random() * 4) + 's';
-    heart.style.fontSize = (16 + Math.random() * 20) + 'px';
 
     document.body.appendChild(heart);
-
     setTimeout(() => heart.remove(), 7500);
 }
 
-// Gentle floating hearts in the background
-setInterval(createHeart, 650);
+setInterval(createHeart, 700);
 </script>
 
 </body>
 </html>
+
