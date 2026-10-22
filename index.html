@@ -1,0 +1,442 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>A Little Apology 💗</title>
+
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&family=Pacifico&display=swap');
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    min-height: 100vh;
+    font-family: 'Nunito', sans-serif;
+    background: linear-gradient(135deg, #ffe0ec, #fff0f5, #fce4ff);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow-x: hidden;
+    color: #75415b;
+}
+
+.heart {
+    position: fixed;
+    bottom: -40px;
+    font-size: 22px;
+    pointer-events: none;
+    animation: floatUp linear forwards;
+    z-index: 0;
+}
+
+@keyframes floatUp {
+    to {
+        transform: translateY(-115vh) rotate(360deg);
+        opacity: 0;
+    }
+}
+
+.container {
+    width: min(90%, 540px);
+    padding: 35px 25px;
+    text-align: center;
+    background: rgba(255,255,255,0.76);
+    border: 2px solid white;
+    border-radius: 30px;
+    box-shadow: 0 15px 50px rgba(203, 107, 151, 0.18);
+    position: relative;
+    z-index: 1;
+    margin: 25px 0;
+}
+
+.page {
+    display: none;
+    animation: appear 0.65s ease;
+}
+
+.page.active {
+    display: block;
+}
+
+@keyframes appear {
+    from {
+        opacity: 0;
+        transform: translateY(15px) scale(.98);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+.emoji {
+    font-size: 65px;
+    margin-bottom: 15px;
+    animation: bounce 2s infinite ease-in-out;
+}
+
+@keyframes bounce {
+    50% { transform: translateY(-8px) rotate(3deg); }
+}
+
+h1 {
+    font-family: 'Pacifico', cursive;
+    font-size: clamp(28px, 7vw, 39px);
+    color: #e36b9b;
+    margin-bottom: 18px;
+    font-weight: normal;
+}
+
+p {
+    font-size: 16px;
+    line-height: 1.9;
+    margin: 12px 0;
+}
+
+.highlight {
+    color: #df6095;
+    font-weight: 800;
+}
+
+.divider {
+    color: #f09abb;
+    letter-spacing: 8px;
+    margin: 18px 0;
+}
+
+button {
+    font-family: 'Nunito', sans-serif;
+    border: none;
+    cursor: pointer;
+    padding: 13px 24px;
+    border-radius: 30px;
+    font-size: 15px;
+    font-weight: 800;
+    margin: 8px 5px;
+    transition: transform .2s, box-shadow .2s;
+}
+
+button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 7px 15px #e9a0c277;
+}
+
+.next {
+    color: white;
+    background: linear-gradient(135deg, #f18bb5, #df6095);
+    margin-top: 22px;
+}
+
+.back {
+    background: #fff0f6;
+    color: #d15c8e;
+    border: 1px solid #f5cade;
+}
+
+.yes {
+    color: white;
+    background: linear-gradient(135deg, #f48bb5, #e35c98);
+    font-size: 17px;
+}
+
+.no {
+    color: #b45b7e;
+    background: #ffe8f0;
+    border: 1px solid #f5c3d7;
+}
+
+.progress {
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+    margin-bottom: 22px;
+}
+
+.dot {
+    width: 9px;
+    height: 9px;
+    border-radius: 50%;
+    background: #f4c4d7;
+}
+
+.dot.current {
+    background: #e46b9d;
+    transform: scale(1.35);
+}
+
+.promise {
+    text-align: left;
+    background: #fff4f8;
+    border-radius: 18px;
+    padding: 13px 15px;
+    margin: 10px 0;
+    border: 1px solid #ffe0ec;
+}
+
+.promise span {
+    margin-right: 7px;
+}
+
+#answer {
+    margin-top: 22px;
+    padding: 17px;
+    border-radius: 18px;
+    background: #fff0f6;
+    display: none;
+    animation: appear .5s ease;
+}
+
+.footer {
+    margin-top: 25px;
+    font-size: 12px;
+    color: #c18ba3;
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+    <div class="progress">
+        <div class="dot current"></div>
+        <div class="dot"></div>
+        <div class="dot"></div>
+        <div class="dot"></div>
+    </div>
+
+    <!-- PAGE 1 -->
+    <section class="page active" id="page1">
+        <div class="emoji">🥺💗</div>
+        <h1>Hey, You...</h1>
+
+        <p>
+            I made this little corner of the internet
+            just for you. 🌷
+        </p>
+
+        <p>
+            There's something I've been wanting to say,
+            and I hope you'll give me a little moment
+            to say it.
+        </p>
+
+        <div class="divider">♡ ♡ ♡</div>
+
+        <p class="highlight">
+            Ready to hear me out? 🧸
+        </p>
+
+        <button class="next" onclick="goTo(2)">
+            Open my little letter 💌 →
+        </button>
+    </section>
+
+    <!-- PAGE 2 -->
+    <section class="page" id="page2">
+        <div class="emoji">💌🌸</div>
+        <h1>I'm Really Sorry</h1>
+
+        <p>
+            I know that I may have hurt your feelings,
+            and honestly, I'm sorry for that.
+        </p>
+
+        <p>
+            I never wanted to make you feel upset,
+            unimportant, or unheard. Your feelings matter,
+            and I should have been more thoughtful.
+        </p>
+
+        <p>
+            I can't change what happened, but I can
+            acknowledge it, learn from it, and try to
+            do better.
+        </p>
+
+        <div class="divider">୨୧ ♡ ୨୧</div>
+
+        <p class="highlight">
+            You deserve a genuine apology, not just
+            a bunch of pretty words. 🥹
+        </p>
+
+        <button class="back" onclick="goTo(1)">← Back</button>
+        <button class="next" onclick="goTo(3)">One more thing... 💗 →</button>
+    </section>
+
+    <!-- PAGE 3 -->
+    <section class="page" id="page3">
+        <div class="emoji">🧸🎀</div>
+        <h1>A Little Promise</h1>
+
+        <p>
+            I can't promise to be perfect,
+            but I can promise to keep trying. 💕
+        </p>
+
+        <div class="promise">
+            <span>🌷</span>
+            To listen to you instead of dismissing
+            how you feel.
+        </div>
+
+        <div class="promise">
+            <span>💗</span>
+            To take responsibility when I'm wrong.
+        </div>
+
+        <div class="promise">
+            <span>🫶</span>
+            To show through my actions that
+            I'm making an effort.
+        </div>
+
+        <div class="promise">
+            <span>🦋</span>
+            To respect your feelings and give you
+            the time you need.
+        </div>
+
+        <p>
+            You don't have to forgive me immediately.
+            I just hope I can make things right,
+            one little step at a time. 🌸
+        </p>
+
+        <button class="back" onclick="goTo(2)">← Back</button>
+        <button class="next" onclick="goTo(4)">One last question 💖 →</button>
+    </section>
+
+    <!-- PAGE 4 -->
+    <section class="page" id="page4">
+        <div class="emoji">🥹💞</div>
+        <h1>Will You Forgive Me?</h1>
+
+        <p>
+            I know a website can't fix everything,
+            but every word here comes with a sincere
+            wish to make things better. 💌
+        </p>
+
+        <p class="highlight">
+            So, what do you say? 🌷
+        </p>
+
+        <div style="margin-top: 25px;">
+            <button class="yes" onclick="choose('yes')">
+                Yes, I forgive you 💖
+            </button>
+
+            <button class="no" onclick="choose('no')">
+                Not yet 💔
+            </button>
+        </div>
+
+        <div id="answer"></div>
+
+        <button class="back" onclick="goTo(3)">← Read again</button>
+    </section>
+
+    <div class="footer">
+        made with a little hope & lots of pink ♡
+    </div>
+</div>
+
+<script>
+let currentPage = 1;
+
+function goTo(number) {
+    document.getElementById('page' + currentPage)
+        .classList.remove('active');
+
+    currentPage = number;
+
+    document.getElementById('page' + currentPage)
+        .classList.add('active');
+
+    document.querySelectorAll('.dot').forEach((dot, index) => {
+        dot.classList.toggle('current', index === number - 1);
+    });
+
+    document.getElementById('answer').style.display = 'none';
+
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+}
+
+function choose(choice) {
+    const answer = document.getElementById('answer');
+    answer.style.display = 'block';
+
+    if (choice === 'yes') {
+        answer.innerHTML = `
+            <div style="font-size:45px">🥹💖🌷</div>
+            <h2 style="color:#df6095; margin:10px 0">
+                Thank you, truly!
+            </h2>
+            <p>
+                That means so much. I'll do my best
+                to show you that your forgiveness
+                matters to me. Sending you the
+                biggest virtual hug! 🫂💕
+            </p>
+            <p>♡ You are appreciated ♡</p>
+        `;
+
+        burstHearts();
+    } else {
+        answer.innerHTML = `
+            <div style="font-size:45px">🫶🌸</div>
+            <h2 style="color:#df6095; margin:10px 0">
+                That's okay. 💗
+            </h2>
+            <p>
+                I understand. You don't have to
+                forgive me before you're ready.
+                I'll respect your feelings and give
+                you the time and space you need.
+            </p>
+            <p>
+                I'm still genuinely sorry, and I hope
+                my actions can make things better. 🌷
+            </p>
+        `;
+    }
+}
+
+function burstHearts() {
+    for (let i = 0; i < 24; i++) {
+        setTimeout(createHeart, i * 70);
+    }
+}
+
+function createHeart() {
+    const heart = document.createElement('div');
+    heart.className = 'heart';
+
+    const emojis = ['💗', '💕', '💖', '🌸', '💞', '🩷'];
+    heart.textContent = emojis[
+        Math.floor(Math.random() * emojis.length)
+    ];
+
+    heart.style.left = Math.random() * 100 + 'vw';
+    heart.style.animationDuration = (3 + Math.random() * 4) + 's';
+    heart.style.fontSize = (16 + Math.random() * 20) + 'px';
+
+    document.body.appendChild(heart);
+
+    setTimeout(() => heart.remove(), 7500);
+}
+
+// Gentle floating hearts in the background
+setInterval(createHeart, 650);
+</script>
+
+</body>
+</html>
